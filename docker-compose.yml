@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  target:
+    build:
+      context: .
+      dockerfile: Dockerfile.target
+    container_name: ssh_target
+    ports:
+      - "2222:22"
+
+  attacker:
+    build:
+      context: .
+      dockerfile: Dockerfile.attacker
+    container_name: ssh_attacker
+    depends_on:
+      - target
