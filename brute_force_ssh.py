@@ -2,7 +2,7 @@ import subprocess
 import time
 import sys
 
-def try_ssh_login(password: str, host: str = "target", port: int = 22, username: str = "root") -> bool:
+def try_ssh_login(password: str, host: str = "localhost", port: int = 2222, username: str = "root") -> bool:
     """Try to login via SSH using the given password"""
     try:
         # Using sshpass to automate password entry
